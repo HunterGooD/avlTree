@@ -3,6 +3,8 @@
 
 typedef struct node node;
 
+node* newNode(int key, int value);
+
 void recalcHeight(node *n);
 int height(node* n);
 int balanceFactor(node* n);

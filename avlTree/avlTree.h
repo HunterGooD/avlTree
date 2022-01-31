@@ -4,6 +4,8 @@
 typedef struct avlTree avlTree;
 typedef struct node node;
 
+avlTree* newAVLTree();
+
 void insertAVL(avlTree* avl, int value, int key);
 node* insert(node* n, int value, int key);
 

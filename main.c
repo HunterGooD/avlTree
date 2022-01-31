@@ -1,6 +1,8 @@
 #include <stdio.h>
+#include "avlTree/avlTree.h"
 
 int main() {
-    printf("Hello world");
+    avlTree *avl  = newAVLTree();
+
     return 0;
 }

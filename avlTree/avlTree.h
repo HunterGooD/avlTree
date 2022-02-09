@@ -3,6 +3,9 @@
 
 typedef struct avlTree avlTree;
 typedef struct node node;
+struct node{
+    int value;
+};
 
 avlTree* newAVLTree();
 

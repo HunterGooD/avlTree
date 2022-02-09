@@ -20,20 +20,24 @@ node* newNode(int key, int value) {
     return n;
 }
 
+// определяет высоту дерева
 int height(node* n) {
     return n == NULL ? 0 : n->height;
 }
 
+// перевычисление высоты
 void recalcHeight(node* n) {
     int hl = height(n->left);
     int hr = height(n->right);
     n->height = (hl > hr ? hl : hr) +1;
 }
 
+// проверка баланса
 int balanceFactor(node* n) {
     return height(n->right) - height(n->left);// если будет положительное значит правое перевешивает
 }
 
+// малый левый поворот
 node* rotateLeft(node* n) {
     node* nr = n->right;
     n->right = nr->left;
@@ -41,6 +45,7 @@ node* rotateLeft(node* n) {
     return nr;
 }
 
+// малый правый поворот
 node* rotateRight(node* n) {
     node* nl = n->left;
     n->left = nl->right;
@@ -48,6 +53,7 @@ node* rotateRight(node* n) {
     return nl;
 }
 
+// балансировка узла
 node* balance(node* n) {
     recalcHeight(n);
     if (balanceFactor(n) == 2) { // значит перевешивает правое
